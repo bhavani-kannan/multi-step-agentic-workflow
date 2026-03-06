@@ -15,8 +15,8 @@
         <h1>Dashboard Numbers Not Updated - Human vs Agent Flow</h1>
         <p class="hero-description">
           This demo shows how a human analyst interprets the incident, and how the agent uses enterprise context memory,
-          historical similarity, platform mapping, and controlled branching to choose the right toolset, route, and escalation path.
-          The same incident pattern may belong to different platforms, different resolution flows, and different vendor chains.
+          historical similarity, platform mapping, controlled branching, and ownership logic to decide the correct next step.
+          The same stale-dashboard symptom can belong to different platforms, different routes, and different vendor handoffs.
         </p>
       </div>
     </header>
@@ -86,64 +86,18 @@
       <div class="section-header">
         <div>
           <p class="section-kicker">Human to Agentic Workflow</p>
-          <h2>Each human process step expands into one or more agent tasks and alternate routes</h2>
+          <h2>Each human step expands into one or more agent tasks, decisions, alternate routes, and handoffs</h2>
         </div>
       </div>
 
       <div class="flow-intro-strip">
         <div class="legend-chip legend-human">H = Human Process Step</div>
         <div class="legend-chip legend-agent">A = Agent Task</div>
-        <div class="legend-chip legend-alt">Alternate route or resolution</div>
+        <div class="legend-chip legend-decision">Decision logic inside agent tasks</div>
+        <div class="legend-chip legend-alt">Alternate route remains visible</div>
       </div>
 
       <div class="workflow-canvas" id="workflowCanvas"></div>
-    </section>
-
-    <section class="card outcome-panel">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Decisioning and Handoff</p>
-          <h2>Likely routes, next action, and escalation chain</h2>
-        </div>
-      </div>
-
-      <div class="outcome-grid">
-        <div class="outcome-box">
-          <h3>Top candidate routes</h3>
-          <div id="routeCandidates" class="route-board"></div>
-        </div>
-
-        <div class="outcome-box">
-          <h3>Recommended next action</h3>
-          <div id="recommendedNextAction" class="highlight-box"></div>
-        </div>
-
-        <div class="outcome-box">
-          <h3>Escalation target and ownership chain</h3>
-          <div id="escalationTarget" class="stack-list"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="card walkthrough-panel">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Incident Story</p>
-          <h2>Step-by-step walkthrough for the current demo scenario</h2>
-        </div>
-      </div>
-
-      <div class="walkthrough-grid">
-        <div class="walkthrough-box">
-          <h3>Timeline</h3>
-          <div id="storyTimeline" class="timeline-list"></div>
-        </div>
-
-        <div class="walkthrough-box">
-          <h3>Final resolution summary</h3>
-          <div id="finalResolution" class="stack-list"></div>
-        </div>
-      </div>
     </section>
 
   </div>
