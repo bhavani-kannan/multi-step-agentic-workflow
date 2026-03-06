@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Numbers Not Updated - Human vs Agent Flow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <header class="hero-full">
+      <div class="hero-inner">
+        <span class="hero-tag">Process Mapping</span>
+        <h1>Dashboard Numbers Not Updated - Human vs Agent Flow</h1>
+        <p class="hero-description">
+          This demo shows how a human analyst interprets the incident, and how the agent uses enterprise context memory,
+          historical similarity, platform mapping, and controlled branching to choose the right toolset, route, and escalation path.
+          The same incident pattern may belong to different platforms, different resolution flows, and different vendor chains.
+        </p>
+      </div>
+    </header>
+
+    <section class="incident-metadata-row">
+      <div class="meta-tile">
+        <span class="meta-label">Incident ID</span>
+        <span class="meta-value" id="incidentId">INC-DBD-7834521</span>
+      </div>
+      <div class="meta-tile">
+        <span class="meta-label">Created By</span>
+        <span class="meta-value" id="createdBy">maria.gomez@domain.com</span>
+      </div>
+      <div class="meta-tile">
+        <span class="meta-label">Opened At</span>
+        <span class="meta-value" id="openedAt">2026-03-06 09:12 AM</span>
+      </div>
+      <div class="meta-tile">
+        <span class="meta-label">Priority</span>
+        <span class="meta-value" id="priority">P2</span>
+      </div>
+      <div class="meta-tile">
+        <span class="meta-label">Affected Domain</span>
+        <span class="meta-value" id="affectedDomain">Finance</span>
+      </div>
+      <div class="meta-tile">
+        <span class="meta-label">Affected Users</span>
+        <span class="meta-value" id="affectedUsers">7</span>
+      </div>
+    </section>
+
+    <section class="card incident-ticket-panel">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Incident Intake</p>
+          <h2>Ticket received by service desk</h2>
+        </div>
+      </div>
+
+      <div class="ticket-grid">
+        <div class="ticket-box">
+          <h3>Short Description</h3>
+          <p id="ticketTitle">Dashboard numbers not updated since scheduled refresh.</p>
+        </div>
+
+        <div class="ticket-box">
+          <h3>Description</h3>
+          <p id="ticketDescription">
+            Finance dashboard values appear stale. Users report that month-to-date metrics have not changed since morning.
+            It is unclear whether the dashboard refresh failed, the pipeline did not run, or the source data did not arrive.
+          </p>
+        </div>
+
+        <div class="ticket-box">
+          <h3>Human first interpretation</h3>
+          <ul id="humanFirstLook" class="plain-list"></ul>
+        </div>
+
+        <div class="ticket-box">
+          <h3>Agent extraction from ticket</h3>
+          <ul id="agentExtraction" class="plain-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card workflow-panel">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Human to Agentic Workflow</p>
+          <h2>Each human process step expands into one or more agent tasks and alternate routes</h2>
+        </div>
+      </div>
+
+      <div class="flow-intro-strip">
+        <div class="legend-chip legend-human">H = Human Process Step</div>
+        <div class="legend-chip legend-agent">A = Agent Task</div>
+        <div class="legend-chip legend-alt">Alternate route or resolution</div>
+      </div>
+
+      <div class="workflow-canvas" id="workflowCanvas"></div>
+    </section>
+
+    <section class="card outcome-panel">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Decisioning and Handoff</p>
+          <h2>Likely routes, next action, and escalation chain</h2>
+        </div>
+      </div>
+
+      <div class="outcome-grid">
+        <div class="outcome-box">
+          <h3>Top candidate routes</h3>
+          <div id="routeCandidates" class="route-board"></div>
+        </div>
+
+        <div class="outcome-box">
+          <h3>Recommended next action</h3>
+          <div id="recommendedNextAction" class="highlight-box"></div>
+        </div>
+
+        <div class="outcome-box">
+          <h3>Escalation target and ownership chain</h3>
+          <div id="escalationTarget" class="stack-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card walkthrough-panel">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Incident Story</p>
+          <h2>Step-by-step walkthrough for the current demo scenario</h2>
+        </div>
+      </div>
+
+      <div class="walkthrough-grid">
+        <div class="walkthrough-box">
+          <h3>Timeline</h3>
+          <div id="storyTimeline" class="timeline-list"></div>
+        </div>
+
+        <div class="walkthrough-box">
+          <h3>Final resolution summary</h3>
+          <div id="finalResolution" class="stack-list"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
